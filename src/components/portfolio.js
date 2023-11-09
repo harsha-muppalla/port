@@ -1,9 +1,8 @@
 import"./style.css";
 import { useRef } from "react";
-import lightbox from "lightbox-react";
+
 
 const Home = () => {
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const navBar = useRef(null);
 
   // Sticky navigation bar code
@@ -16,17 +15,7 @@ const Home = () => {
     }
   });
 
-  // Lightbox code
 
-  const openLightbox = (image) => {
-    setIsLightboxOpen(true);
-    lightbox.open(image);
-  };
-
-  const closeLightbox = () => {
-    setIsLightboxOpen(false);
-    lightbox.close();
-  };
 
   return (
     <div className="App">
@@ -56,9 +45,6 @@ const Home = () => {
         </table>
       </div>
 
-      <lightbox isOpen={isLightboxOpen} onClose={closeLightbox}>
-        <img src={image} />
-      </lightbox>
     </div>
   );
 };
